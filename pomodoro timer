@@ -1,0 +1,49 @@
+int pomodoro = 0, buzzer = 2, led = 13;
+
+void setup()
+{
+	pinMode(buzzer, OUTPUT);
+	pinMode(led, OUTPUT);
+}
+
+void loop()
+{
+	delay(1500000);
+	if (pomodoro == 4)
+	{
+		timer (1200000);
+		
+		pomodoro = 0;
+	}
+	else
+	{
+		timer(300000);
+		
+		pomodoro ++;
+	}
+}
+
+void timer (int time)
+{
+	for (int t = 0; t < 10; t ++)
+		{
+			digitalWrite(buzzer, HIGH);
+			delay(50);
+			digitalWrite(buzzer, LOW);
+			delay(50);
+		}
+		
+	digitalWrite(led, HIGH);
+	
+	delay(time);
+	
+	for (int t = 0; t < 10; t ++)
+		{
+			digitalWrite(buzzer, HIGH);
+			delay(50);
+			digitalWrite(buzzer, LOW);
+			delay(50);
+		}
+	
+	digitalWrite(led, LOW);
+}
