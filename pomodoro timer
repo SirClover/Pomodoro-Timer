@@ -9,7 +9,7 @@ void setup()
 void loop()
 {
 	delay(1500000);
-	if (pomodoro == 4)
+	if (pomodoro == 3)
 	{
 		timer (1200000);
 		
